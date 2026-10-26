@@ -9,8 +9,8 @@ import { LinkedInIcon, XIcon, InstagramIcon, GitHubIcon } from "@/components/ui/
 
 const ecosystemLinks = [
   { label: "dhurta.com — Products", href: "https://dhurta.com" },
-  { label: "Dhurta Browser on GitHub", href: "https://github.com/prashantkeshr/Dhurta" },
-  { label: "Browser Releases", href: "https://github.com/prashantkeshr/Dhurta/releases" },
+  { label: "Dhurta Browser on GitHub", href: "https://github.com/prashantkeshr/drtajl26.n" },
+  { label: "Browser Releases", href: "https://github.com/prashantkeshr/drtajl26.n/releases" },
   { label: "Group Ventures", href: "/ventures" },
 ];
 
@@ -61,7 +61,7 @@ export default function Footer() {
                 { Icon: LinkedInIcon, href: "#" },
                 { Icon: XIcon, href: "#" },
                 { Icon: InstagramIcon, href: "#" },
-                { Icon: GitHubIcon, href: "https://github.com/prashantkeshr/Dhurta" },
+                { Icon: GitHubIcon, href: "https://github.com/prashantkeshr/drtajl26.n" },
               ].map(({ Icon, href }, i) => (
                 <a
                   key={i}

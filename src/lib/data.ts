@@ -123,7 +123,7 @@ export const ventures: Venture[] = [
     highlights: ["Zero telemetry, by design", "Open source & auditable", "Privacy-first defaults"],
     links: [
       { label: "dhurta.com", href: "https://dhurta.com" },
-      { label: "GitHub", href: "https://github.com/prashantkeshr/Dhurta" },
+      { label: "GitHub", href: "https://github.com/prashantkeshr/drtajl26.n" },
     ],
   },
   {

@@ -170,14 +170,14 @@ const organizationJsonLd = {
   description: siteDescription,
   email: "contact@dhurta.org",
   slogan: "The Clever Choice — Trust, Technology, Culture",
-  sameAs: ["https://dhurta.com", "https://github.com/prashantkeshr/Dhurta"],
+  sameAs: ["https://dhurta.com", "https://github.com/prashantkeshr/drtajl26.n"],
   brand: [
     {
       "@type": "Brand",
       name: "Dhurta Browser",
       description:
         "Flagship open-source, privacy-first web browser with zero telemetry.",
-      url: "https://github.com/prashantkeshr/Dhurta",
+      url: "https://github.com/prashantkeshr/drtajl26.n",
     },
     {
       "@type": "Brand",
