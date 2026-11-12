@@ -4,7 +4,6 @@ import VenturesSection from "@/components/home/VenturesSection";
 import ServicesGrid from "@/components/home/ServicesGrid";
 import StatsSection from "@/components/home/StatsSection";
 import GlobalPresence from "@/components/home/GlobalPresence";
-import GlobalNetwork from "@/components/home/GlobalNetwork";
 import Testimonials from "@/components/home/Testimonials";
 import ProcessTimeline from "@/components/home/ProcessTimeline";
 import ContactSection from "@/components/home/ContactSection";
@@ -20,7 +19,6 @@ export default function Home() {
       <ServicesGrid />
       <StatsSection />
       <GlobalPresence />
-      <GlobalNetwork />
       <Testimonials />
       <ProcessTimeline />
       <ContactSection />
