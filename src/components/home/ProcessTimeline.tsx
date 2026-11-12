@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import { processSteps } from "@/lib/data";
 import SectionHeading from "@/components/ui/SectionHeading";
 
-const easeOutExpo = [0.22, 1, 0.36, 1] as const;
-
 export default function ProcessTimeline() {
   return (
     <section className="relative bg-navy py-28">
@@ -18,31 +16,7 @@ export default function ProcessTimeline() {
         />
 
         <div className="relative">
-          <svg
-            className="absolute left-6 top-0 hidden h-full w-0.5 overflow-visible lg:left-1/2 lg:block lg:-translate-x-1/2"
-          >
-            <defs>
-              <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
-                <stop offset="0%" stopColor="#c9a84c" stopOpacity="0" />
-                <stop offset="20%" stopColor="#c9a84c" stopOpacity="0.8" />
-                <stop offset="80%" stopColor="#c9a84c" stopOpacity="0.8" />
-                <stop offset="100%" stopColor="#c9a84c" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-            <motion.line
-              x1="1"
-              y1="0"
-              x2="1"
-              y2="100%"
-              stroke="url(#goldGrad)"
-              strokeWidth="1.5"
-              strokeDasharray={9999}
-              initial={{ strokeDashoffset: 9999 }}
-              whileInView={{ strokeDashoffset: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.8, ease: "easeInOut" }}
-            />
-          </svg>
+          <div className="absolute left-6 top-0 hidden h-full w-px bg-gradient-to-b from-gold/60 via-gold/20 to-transparent lg:left-1/2 lg:block" />
 
           <div className="space-y-12 lg:space-y-0">
             {processSteps.map((step, i) => (
@@ -51,7 +25,7 @@ export default function ProcessTimeline() {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.7, delay: i * 0.1, ease: easeOutExpo }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
                 className={`relative flex flex-col gap-6 pl-16 lg:grid lg:grid-cols-2 lg:gap-16 lg:pl-0 lg:py-10 ${
                   i % 2 === 0 ? "" : "lg:[direction:rtl]"
                 }`}

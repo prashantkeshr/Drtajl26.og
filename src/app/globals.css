@@ -27,14 +27,14 @@
   --font-display: var(--font-playfair), "Noto Serif", serif;
   --font-sans: var(--font-inter), var(--font-noto-sans), sans-serif;
   --font-tech: var(--font-space-grotesk), monospace;
-  --font-devanagari: "Noto Sans Devanagari", sans-serif;
-  --font-bengali: "Noto Sans Bengali", sans-serif;
-  --font-arabic: "Noto Sans Arabic", sans-serif;
-  --font-sc: "Noto Sans SC", sans-serif;
-  --font-jp: "Noto Sans JP", sans-serif;
-  --font-kr: "Noto Sans KR", sans-serif;
-  --font-thai: "Noto Sans Thai", sans-serif;
-  --font-tamil: "Noto Sans Tamil", sans-serif;
+  --font-devanagari: var(--font-noto-devanagari), sans-serif;
+  --font-bengali: var(--font-noto-bengali), sans-serif;
+  --font-arabic: var(--font-noto-arabic), sans-serif;
+  --font-sc: var(--font-noto-sc), sans-serif;
+  --font-jp: var(--font-noto-jp), sans-serif;
+  --font-kr: var(--font-noto-kr), sans-serif;
+  --font-thai: var(--font-noto-thai), sans-serif;
+  --font-tamil: var(--font-noto-tamil), sans-serif;
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-float-slow: float 10s ease-in-out infinite;
@@ -140,40 +140,15 @@ body {
 }
 
 .glass-card {
-  background: linear-gradient(145deg, rgba(255,255,255,0.065), rgba(255,255,255,0.018));
-  backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(201,168,76,0.12);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.glass-card:hover {
-  border-color: rgba(201,168,76,0.25);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(201, 168, 76, 0.15);
 }
 
 .perspective-container {
   perspective: 1200px;
-}
-
-.glow-gold {
-  box-shadow: 0 0 24px 4px rgba(201,168,76,0.35), 0 0 8px 1px rgba(201,168,76,0.2);
-}
-.glow-teal {
-  box-shadow: 0 0 24px 4px rgba(0,212,170,0.3), 0 0 8px 1px rgba(0,212,170,0.15);
-}
-.glow-blue {
-  box-shadow: 0 0 24px 4px rgba(74,158,255,0.3), 0 0 8px 1px rgba(74,158,255,0.15);
-}
-.text-shimmer {
-  background: linear-gradient(90deg, var(--color-gold-light), var(--color-gold), var(--color-gold-dark), var(--color-gold));
-  background-size: 300% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: gradient-shift 4s ease infinite;
-}
-.border-gradient-gold {
-  border: 1px solid transparent;
-  background-clip: padding-box;
-  box-shadow: 0 0 0 1px rgba(201,168,76,0.3);
 }

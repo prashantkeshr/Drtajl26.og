@@ -6,19 +6,6 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import Button from "@/components/ui/Button";
 import LanguageTypewriter from "@/components/ui/LanguageTypewriter";
 
-const hasWebGL = (() => {
-  if (typeof window === "undefined") return false;
-  try {
-    const c = document.createElement("canvas");
-    return !!(
-      window.WebGLRenderingContext &&
-      (c.getContext("webgl") || c.getContext("experimental-webgl"))
-    );
-  } catch {
-    return false;
-  }
-})();
-
 const HeroScene = dynamic(() => import("@/components/three/HeroScene"), {
   ssr: false,
 });
@@ -29,19 +16,7 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-navy">
       <div className="absolute inset-0 z-0">
-        {hasWebGL ? (
-          <HeroScene />
-        ) : (
-          <div
-            className="h-full w-full rounded-full"
-            style={{
-              background:
-                "radial-gradient(ellipse at center, rgba(201,168,76,0.08) 0%, transparent 70%)",
-              transform: "scale(2)",
-              animation: "spin 60s linear infinite",
-            }}
-          />
-        )}
+        <HeroScene />
       </div>
 
       <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-navy/40 via-transparent to-navy" />
@@ -80,13 +55,6 @@ export default function Hero() {
             </motion.span>
           ))}
         </h1>
-
-        <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          animate={{ opacity: 1, scaleX: 1 }}
-          transition={{ delay: 1.0, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-6 h-px w-64 bg-gradient-to-r from-transparent via-gold/60 to-transparent"
-        />
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -128,10 +96,14 @@ export default function Hero() {
         transition={{ delay: 2, duration: 0.8 }}
         className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
       >
-        <div className="flex flex-col items-center gap-1 text-gray-light opacity-40 animate-bounce">
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+          className="flex flex-col items-center gap-1 text-gray-light"
+        >
           <span className="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
           <ChevronDown size={18} />
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );

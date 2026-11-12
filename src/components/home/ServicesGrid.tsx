@@ -25,13 +25,11 @@ const icons: Record<string, LucideIcon> = {
   "trending-up": TrendingUp,
 };
 
-const colorMap: Record<string, { from: string; icon: string }> = {
-  gold: { from: "from-gold/20", icon: "text-gold" },
-  teal: { from: "from-teal/20", icon: "text-teal" },
-  blue: { from: "from-blue/20", icon: "text-blue" },
+const colorMap: Record<string, string> = {
+  gold: "from-gold/20 text-gold",
+  teal: "from-teal/20 text-teal",
+  blue: "from-blue/20 text-blue",
 };
-
-const easeOutExpo = [0.22, 1, 0.36, 1] as const;
 
 export default function ServicesGrid() {
   return (
@@ -44,36 +42,22 @@ export default function ServicesGrid() {
           className="mb-16"
         />
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => {
             const Icon = icons[service.icon];
-            const colors = colorMap[service.color] ?? colorMap.gold;
-            const isLarge = i === 0;
-            const isMedium = i === 1;
-            const colClass = isLarge
-              ? "md:col-span-3 md:row-span-2"
-              : isMedium
-              ? "md:col-span-3"
-              : "md:col-span-2";
-
             return (
               <motion.div
                 key={service.slug}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.7, delay: i * 0.08, ease: easeOutExpo }}
-                className={colClass}
+                transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
               >
-                <TiltCard
-                  className={`glass-card h-full p-8 ${
-                    isLarge ? "bg-gradient-to-br from-gold/10 to-transparent" : ""
-                  }`}
-                >
+                <TiltCard className="glass-card h-full p-8">
                   <div
-                    className={`mb-6 flex items-center justify-center rounded-xl bg-gradient-to-br ${colors.from} ${colors.icon} border border-white/10 ${isLarge ? "h-16 w-16" : "h-14 w-14"}`}
+                    className={`mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${colorMap[service.color]} border border-white/10`}
                   >
-                    <Icon size={isLarge ? 32 : 26} />
+                    <Icon size={26} />
                   </div>
                   <h3 className="font-display text-xl font-bold text-white">
                     {service.title}
@@ -81,7 +65,7 @@ export default function ServicesGrid() {
                   <p className="mt-2 text-sm font-medium text-gold/80">
                     {service.shortDesc}
                   </p>
-                  <p className="mt-4 text-sm leading-relaxed text-gray-light/80">
+                  <p className="mt-4 text-sm leading-relaxed text-gray-light">
                     {service.description}
                   </p>
                   <Link
