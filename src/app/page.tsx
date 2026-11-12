@@ -12,9 +12,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div aria-hidden className="pointer-events-none h-16 bg-gradient-to-b from-navy to-black" />
       <BrandStory />
-      <div aria-hidden className="pointer-events-none h-16 bg-gradient-to-b from-black to-navy" />
       <VenturesSection />
       <ServicesGrid />
       <StatsSection />

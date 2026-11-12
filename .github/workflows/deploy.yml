@@ -37,8 +37,6 @@ jobs:
 
       - name: Build static site
         run: npm run build
-        env:
-          NEXT_PUBLIC_WEB3FORMS_KEY: fd977604-28f7-451a-ac05-9aea48b87ce0
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
