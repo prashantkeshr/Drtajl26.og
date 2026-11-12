@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -15,6 +15,11 @@ export default function TiltCard({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [hovered, setHovered] = useState(false);
+  const isTouchDevice = useRef(false);
+
+  useEffect(() => {
+    isTouchDevice.current = window.matchMedia("(hover: none)").matches;
+  }, []);
 
   const x = useMotionValue(0.5);
   const y = useMotionValue(0.5);
@@ -30,6 +35,7 @@ export default function TiltCard({
   );
 
   function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    if (isTouchDevice.current) return;
     const rect = ref.current?.getBoundingClientRect();
     if (!rect) return;
     x.set((e.clientX - rect.left) / rect.width);
@@ -37,6 +43,7 @@ export default function TiltCard({
   }
 
   function handleLeave() {
+    if (isTouchDevice.current) return;
     setHovered(false);
     x.set(0.5);
     y.set(0.5);
@@ -46,7 +53,7 @@ export default function TiltCard({
     <motion.div
       ref={ref}
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setHovered(true)}
+      onMouseEnter={() => { if (!isTouchDevice.current) setHovered(true); }}
       onMouseLeave={handleLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
       className={cn(

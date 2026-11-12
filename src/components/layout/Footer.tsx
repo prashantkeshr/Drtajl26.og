@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { navLinks, uiLanguages } from "@/lib/data";
-import { LinkedInIcon, XIcon, InstagramIcon, GitHubIcon } from "@/components/ui/SocialIcons";
+import { GitHubIcon } from "@/components/ui/SocialIcons";
 
 const ecosystemLinks = [
   { label: "dhurta.com — Products", href: "https://dhurta.com" },
@@ -26,6 +26,7 @@ const scriptSnippets = [
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-black">
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
       <div className="pointer-events-none absolute -top-24 left-1/2 h-64 w-[120%] -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(201,168,76,0.08),transparent_70%)]" />
 
       <div className="relative mx-auto flex max-w-7xl flex-wrap items-center gap-x-6 gap-y-2 overflow-hidden border-b border-white/5 px-6 py-3 text-2xl font-semibold text-white/5 lg:px-8">
@@ -57,21 +58,14 @@ export default function Footer() {
               challenges, anywhere in the world.
             </p>
             <div className="mt-6 flex items-center gap-3">
-              {[
-                { Icon: LinkedInIcon, href: "#" },
-                { Icon: XIcon, href: "#" },
-                { Icon: InstagramIcon, href: "#" },
-                { Icon: GitHubIcon, href: "https://github.com/prashantkeshr/drtajl26.n" },
-              ].map(({ Icon, href }, i) => (
-                <a
-                  key={i}
-                  href={href}
-                  {...(href !== "#" && { target: "_blank", rel: "noopener noreferrer" })}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-gray-light transition-all hover:border-gold/50 hover:text-gold"
-                >
-                  <Icon size={16} />
-                </a>
-              ))}
+              <a
+                href="https://github.com/prashantkeshr/drtajl26.n"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-gray-light transition-all hover:border-gold/50 hover:text-gold"
+              >
+                <GitHubIcon size={16} />
+              </a>
             </div>
           </div>
 
