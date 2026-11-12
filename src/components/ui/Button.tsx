@@ -30,7 +30,7 @@ export default function Button({
     primary:
       "bg-gradient-to-r from-gold-light via-gold to-gold-dark bg-[length:200%_auto] text-black shadow-[0_0_0_0_rgba(201,168,76,0.5)] hover:bg-[position:100%_0] hover:shadow-[0_0_30px_4px_rgba(201,168,76,0.35)] hover:-translate-y-0.5 active:translate-y-0",
     secondary:
-      "border border-white/20 text-white hover:border-gold/40 hover:text-gold hover:bg-gold/5 hover:-translate-y-0.5 active:translate-y-0",
+      "border border-gold/40 text-gold hover:bg-gold/10 hover:border-gold hover:-translate-y-0.5 active:translate-y-0",
     ghost:
       "text-white hover:text-gold",
   };

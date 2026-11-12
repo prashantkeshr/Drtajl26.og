@@ -68,7 +68,7 @@ export const groupPillars: GroupPillar[] = [
     name: "Trust",
     sanskrit: "विश्वासः",
     description:
-      "Security-by-design, verifiable engineering. Minimal data footprint, zero servers where none are needed — code you can read, claims you can check.",
+      "Privacy-first, verifiable engineering. Zero telemetry, zero servers where none are needed — code you can read, claims you can check.",
     icon: "shield",
     color: "gold",
   },
@@ -113,14 +113,14 @@ export const ventures: Venture[] = [
     slug: "dhurta-browser",
     name: "Dhurta Browser",
     devanagari: "धूर्त",
-    tagline: "The flagship. A security-by-design browser with minimal data footprint.",
+    tagline: "The flagship. A privacy-first browser with zero telemetry.",
     description:
-      "Our flagship product — a browser built on a simple promise: your browsing belongs to you. No telemetry, locally processed, no user-first defaults. Open source, so the promise is verifiable, not marketing.",
+      "Our flagship product — a browser built on a simple promise: your browsing belongs to you. No telemetry, no phoning home, no dark-pattern defaults. Open source, so the promise is verifiable, not marketing.",
     pillar: "Trust",
     status: "Shipping",
     icon: "compass",
     color: "gold",
-    highlights: ["Minimal data footprint, by design", "Open source & auditable", "Security-by-design defaults"],
+    highlights: ["Zero telemetry, by design", "Open source & auditable", "Privacy-first defaults"],
     links: [
       { label: "dhurta.com", href: "https://dhurta.com" },
       { label: "GitHub", href: "https://github.com/prashantkeshr/drtajl26.n" },
@@ -174,7 +174,7 @@ export const futureSectors: FutureSector[] = [
   },
   {
     name: "Artificial Intelligence",
-    description: "Applied AI built with the same security-by-design ethos — intelligence without surveillance.",
+    description: "Applied AI built with the same privacy-first ethos — intelligence without surveillance.",
     icon: "brain",
   },
   {
